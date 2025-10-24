@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Corpus Effectio — Convite</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <div class="title">Corpus Effectio</div>
+                <div class="subtitle">Enigma foda</div>
+            </div>
+            <div style="margin-left:auto;color:var(--muted);font-size:13px">Um puzzle por domínio • Traga seu raciocínio
+            </div>
+        </header>
+
+        <main>
+            <section class="intro">
+                <div class="card library">
+                    <h3>Bem-vindos, Jogadores</h3>
+                    <p>O Instituto Orbis esconde memórias. Três pedestais guardam testes — <strong>Numeri</strong>,
+                        <strong>Gravitas</strong> e <strong>Alchimia</strong>. Resolva-os e a hora surgirá.</p>
+                    <p class="hint">As respostas exigem atenção, trabalho em equipe e, às vezes, ações no mundo real.
+                    </p>
+
+                    <div class="pedestals">
+                        <div class="pedestal" id="p-num">
+                            <div class="orb-visual" id="orb-num">1</div>
+                            <h3>Numeri</h3>
+                            <div>Sequência: <em>1, 3, 6, 10, 15, ?</em></div>
+                            <label for="ans-num">Resposta</label>
+                            <input id="ans-num" type="text" placeholder="Digite o número" />
+                            <button class="btn" id="btn-num">Confirmar</button>
+                            
+                            <div class="status" id="status-num"></div>
+                        </div>
+
+                        <div class="pedestal" id="p-grav">
+                            <div class="orb-visual" id="orb-grav">⚖</div>
+                            <h3>Gravitas</h3>
+                            <div>Uma esfera X pesa 1. Duas X + uma Y = 5. Quanto pesa Y?</div>
+                            <label for="ans-grav">Resposta</label>
+                            <input id="ans-grav" type="text" placeholder="Digite o número" />
+                            <button class="btn" id="btn-grav">Confirmar</button>
+                            
+                            <div class="status" id="status-grav"></div>
+                        </div>
+
+                        <div class="pedestal" id="p-alch">
+                            <div class="orb-visual" id="orb-alch">💧</div>
+                            <h3>Alchimia</h3>
+                            <div>Dois recipientes: 3L e 5L. Faça exatamente 4 litros.</div>
+                            <label>Controle (simulação)</label>
+                            <div style="display:flex;gap:8px;justify-content:center;margin-top:8px">
+                                <button class="linkish" id="fill5">Encher 5L</button>
+                                <button class="linkish" id="fill3">Encher 3L</button>
+                                <button class="linkish" id="pour5to3">5L → 3L</button>
+                                <button class="linkish" id="pour3to5">3L → 5L</button>
+                                <button class="linkish" id="empty3">Esvaziar 3L</button>
+                                <button class="linkish" id="empty5">Esvaziar 5L</button>
+                            </div>
+                            
+                            <div class="status" id="status-alch">Estado: <span id="state-alch">(5L:0 — 3L:0)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <aside class="card orbs">
+                    <p>Progresso dos pedestais</p>
+                    <div style="display:flex;gap:8px;margin-top:8px">
+                        <div
+                            style="flex:1;text-align:center;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">
+                            Numeri<br><strong id="pnum-ind">pendente</strong></div>
+                        <div
+                            style="flex:1;text-align:center;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">
+                            Gravitas<br><strong id="pgrav-ind">pendente</strong></div>
+                        <div
+                            style="flex:1;text-align:center;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">
+                            Alchimia<br><strong id="palch-ind">pendente</strong></div>
+                    </div>
+                </aside>
+            </section>
+
+            <footer>
+                <div>Corpus Effectio • Enigma interativo</div>
+                <p>&copy; 2025 Guilherme de Paula. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- modal -->
+    <div class="modal" id="modal">
+        <div class="modal-card">
+            <h2>Parabéns — o portal revela a hora</h2>
+            <div class="session-info">
+                <p id="session-text">Data e hora: —</p>
+                <p id="session-link">Link do grupo: —</p>
+            </div>
+            <div class="cta">
+                <button class="btn" id="copy-session">Copiar data/hora</button>
+                <button class="btn" id="open-whats">Abrir WhatsApp</button>
+                <button class="linkish" id="close-modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
